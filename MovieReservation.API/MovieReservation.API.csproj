@@ -1,0 +1,60 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UserSecretsId>12a7c2e7-b0e1-43d6-9412-fa9faa68a027</UserSecretsId>
+  </PropertyGroup>
+
+  <PropertyGroup Condition=" '$(RunConfiguration)' == 'Development' " />
+  <PropertyGroup Condition=" '$(RunConfiguration)' == 'Staging' " />
+  <ItemGroup>
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.4.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="8.0.12">
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
+    <PackageReference Include="Serilog.AspNetCore" Version="9.0.0" />
+    <PackageReference Include="Microsoft.AspNetCore.JsonPatch" Version="8.0.13" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="Controllers\" />
+    <None Remove="Extensions\" />
+    <None Remove="Requests\" />
+    <None Remove="Requests\Movie\" />
+    <None Remove="Requests\Review\" />
+    <None Remove="Requests\Auth\" />
+    <None Remove="Requests\Actor\" />
+    <None Remove="Requests\QueryModels\" />
+    <None Remove="OptionsSetup\" />
+    <None Remove="Requests\Reservation\" />
+    <None Remove="Requests\Showtime\" />
+    <None Remove="ErrorHandling\" />
+    <None Remove="Logs\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Controllers\" />
+    <Folder Include="Extensions\" />
+    <Folder Include="Requests\" />
+    <Folder Include="Requests\Movie\" />
+    <Folder Include="Requests\Review\" />
+    <Folder Include="Requests\Auth\" />
+    <Folder Include="Requests\Actor\" />
+    <Folder Include="Requests\QueryModels\" />
+    <Folder Include="OptionsSetup\" />
+    <Folder Include="Requests\Reservation\" />
+    <Folder Include="Requests\Showtime\" />
+    <Folder Include="ErrorHandling\" />
+    <Folder Include="Logs\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MovieReservation.Infrastracture\MovieReservation.Infrastracture.csproj">
+      <GlobalPropertiesToRemove></GlobalPropertiesToRemove>
+    </ProjectReference>
+    <ProjectReference Include="..\MovieReservation.Application\MovieReservation.Application.csproj">
+      <GlobalPropertiesToRemove></GlobalPropertiesToRemove>
+    </ProjectReference>
+  </ItemGroup>
+</Project>

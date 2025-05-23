@@ -1,0 +1,38 @@
+﻿[
+  {
+    "Id": "632b5306-9202-40b7-aa34-6330a6a459f9",
+    "title": "Les Lyonnais",
+    "description": "An action-packed journey through time and space",
+    "plot": "A group of friends go on a road trip and discover a hidden treasure",
+    "releaseYear": 1996,
+    "originalLanguage": "Portuguese",
+    "country": "Brazil",
+    "runningTime": 143,
+    "rating": 10,
+    "genres": [ "Drama", "Thriller" ]
+  },
+  {
+    "Id": "79cca7e1-3d82-42d6-add0-80f4837bf940",
+    "title": "Curse of the Oily Man (Sumpah orang minyak) ",
+    "description": "A comedic look at life in a chaotic household",
+    "plot": "A detective investigates a murder in a small town",
+    "releaseYear": 1984,
+    "originalLanguage": "English",
+    "country": "Usa",
+    "runningTime": 179,
+    "rating": 2,
+    "genres": [ "Drama", "Fantasy", "Thriller" ]
+  },
+  {
+    "Id": "4657f0df-83ad-492f-922f-e50d91c750ef",
+    "title": "Bullet in the Head",
+    "description": "An action-packed journey through time and space",
+    "plot": "A young woman struggles to find her place in a dystopian society",
+    "releaseYear": 2006,
+    "originalLanguage": "Chinese",
+    "country": "China",
+    "runningTime": 131,
+    "rating": 7,
+    "genres": [ "Action", "Drama", "War" ]
+  }
+]

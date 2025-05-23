@@ -1,0 +1,39 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Identity.UI" Version="8.0.12" />
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="8.0.13" />
+    <PackageReference Include="Pomelo.EntityFrameworkCore.MySql" Version="8.0.3" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MovieReservation.Application\MovieReservation.Application.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="Persistence\EntitiesConfiguration\" />
+    <None Remove="Persistence\Repositories\" />
+    <None Remove="Persistence\Repositories\Base\" />
+    <None Remove="Authentication\" />
+    <None Remove="Persistence\Seeding\" />
+    <None Remove="Persistence\Migrations\" />
+    <None Remove="Serialization\" />
+    <None Remove="Serialization\Converters\" />
+    <None Remove="Authentication\Handlers\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Persistence\EntitiesConfiguration\" />
+    <Folder Include="Persistence\Repositories\" />
+    <Folder Include="Persistence\Repositories\Base\" />
+    <Folder Include="Authentication\" />
+    <Folder Include="Persistence\Seeding\" />
+    <Folder Include="Persistence\Migrations\" />
+    <Folder Include="Serialization\" />
+    <Folder Include="Serialization\Converters\" />
+    <Folder Include="Authentication\Handlers\" />
+  </ItemGroup>
+</Project>

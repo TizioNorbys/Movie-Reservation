@@ -1,0 +1,52 @@
+﻿[
+  {
+    "Id": "9cccfb4a-6477-4606-89ec-e2253b93895f",
+    "Number": 1,
+    "SeatCount": 248
+  },
+  {
+    "Id": "b2b1d5f4-6708-4b99-a973-e123c7d7d413",
+    "Number": 2,
+    "SeatCount": 159
+  },
+  {
+    "Id": "704b83d0-2518-49ca-9e6f-f709be7cea38",
+    "Number": 3,
+    "SeatCount": 130
+  },
+  {
+    "Id": "9af923ed-7130-4fb0-a8e8-a9d65472da28",
+    "Number": 4,
+    "SeatCount": 211
+  },
+  {
+    "Id": "775336ec-adcf-4202-b5ae-dfe21ad139f1",
+    "Number": 5,
+    "SeatCount": 220
+  },
+  {
+    "Id": "1cdb3c22-d680-4518-a56a-29585c13f47c",
+    "Number": 6,
+    "SeatCount": 273
+  },
+  {
+    "Id": "f37e6ceb-6fdd-48a5-9bcc-47a934684f38",
+    "Number": 7,
+    "SeatCount": 127
+  },
+  {
+    "Id": "278bedb0-2468-45e4-bc09-c7a5dc74e10d",
+    "Number": 8,
+    "SeatCount": 208
+  },
+  {
+    "Id": "0df0c18b-c999-49f2-8cfb-46e8ad8534a3",
+    "Number": 9,
+    "SeatCount": 216
+  },
+  {
+    "Id": "f36f26be-2d7c-4ee0-90e6-d2c76d8f6f77",
+    "Number": 10,
+    "SeatCount": 153
+  }
+]

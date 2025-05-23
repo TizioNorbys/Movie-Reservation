@@ -1,0 +1,84 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="FluentValidation.DependencyInjectionExtensions" Version="11.11.0" />
+    <PackageReference Include="FluentResults" Version="3.16.0" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MovieReservation.Domain\MovieReservation.Domain.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="Interfaces\" />
+    <None Remove="Interfaces\Authentication\" />
+    <None Remove="Interfaces\Services\" />
+    <None Remove="DTOs\" />
+    <None Remove="Services\" />
+    <None Remove="Errors\" />
+    <None Remove="Errors\Authentication\" />
+    <None Remove="Validators\" />
+    <None Remove="Errors\Authentication\Identity\" />
+    <None Remove="DTOs\Auth\" />
+    <None Remove="Validators\Auth\" />
+    <None Remove="Interfaces\Services\Base\" />
+    <None Remove="Services\Base\" />
+    <None Remove="DTOs\Movie\" />
+    <None Remove="Validators\Movie\" />
+    <None Remove="Extensions\" />
+    <None Remove="DTOs\Review\" />
+    <None Remove="DTOs\Actor\" />
+    <None Remove="DTOs\Showtime\" />
+    <None Remove="Errors\Movie\" />
+    <None Remove="Validators\Review\" />
+    <None Remove="Interfaces\Data\" />
+    <None Remove="Errors\Authorization\" />
+    <None Remove="Validators\Actor\" />
+    <None Remove="Options\" />
+    <None Remove="Errors\Review\" />
+    <None Remove="DTOs\MovieSearch\" />
+    <None Remove="Utility\" />
+    <None Remove="Validators\Showtime\" />
+    <None Remove="DTOs\Reservation\" />
+    <None Remove="Errors\Reservation\" />
+    <None Remove="DTOs\Seat\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Interfaces\" />
+    <Folder Include="Interfaces\Authentication\" />
+    <Folder Include="Interfaces\Services\" />
+    <Folder Include="DTOs\" />
+    <Folder Include="Services\" />
+    <Folder Include="Errors\" />
+    <Folder Include="Errors\Authentication\" />
+    <Folder Include="Validators\" />
+    <Folder Include="Errors\Authentication\Identity\" />
+    <Folder Include="DTOs\Auth\" />
+    <Folder Include="Validators\Auth\" />
+    <Folder Include="Interfaces\Services\Base\" />
+    <Folder Include="Services\Base\" />
+    <Folder Include="DTOs\Movie\" />
+    <Folder Include="Validators\Movie\" />
+    <Folder Include="Extensions\" />
+    <Folder Include="DTOs\Review\" />
+    <Folder Include="DTOs\Actor\" />
+    <Folder Include="DTOs\Showtime\" />
+    <Folder Include="Errors\Movie\" />
+    <Folder Include="Validators\Review\" />
+    <Folder Include="Interfaces\Data\" />
+    <Folder Include="Errors\Authorization\" />
+    <Folder Include="Validators\Actor\" />
+    <Folder Include="Options\" />
+    <Folder Include="Errors\Review\" />
+    <Folder Include="DTOs\MovieSearch\" />
+    <Folder Include="Utility\" />
+    <Folder Include="Validators\Showtime\" />
+    <Folder Include="DTOs\Reservation\" />
+    <Folder Include="Errors\Reservation\" />
+    <Folder Include="DTOs\Seat\" />
+  </ItemGroup>
+</Project>

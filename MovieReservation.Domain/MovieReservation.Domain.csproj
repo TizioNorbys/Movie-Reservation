@@ -1,0 +1,32 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Repository\" />
+    <None Remove="Extensions\" />
+    <None Remove="Repository\Base\" />
+    <None Remove="Exceptions\" />
+    <None Remove="Abstractions\" />
+    <None Remove="Abstractions\QueryResults\" />
+    <None Remove="Abstractions\DTOs\" />
+    <None Remove="Enums\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Repository\" />
+    <Folder Include="Extensions\" />
+    <Folder Include="Repository\Base\" />
+    <Folder Include="Exceptions\" />
+    <Folder Include="Abstractions\" />
+    <Folder Include="Abstractions\QueryResults\" />
+    <Folder Include="Abstractions\DTOs\" />
+    <Folder Include="Enums\" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="8.0.12" />
+  </ItemGroup>
+</Project>
