@@ -1,5 +1,5 @@
 # Movie Reservation System
-A **Web API** built with **ASP.NET Core**. The system includes user authentication, movie and showtime management and seat reservation functionalities. It allows users to rate and review movies, react to reviews, reserve seats for showtimes and manage their bookings. Admins can also manage movies and showtimes, promote users to higher roles and generate reports for showtimes. Project idea from [roadmap](https://roadmap.sh/projects/movie-reservation-system).
+A **Web API** built with **ASP.NET Core**. The system includes user authentication, movie and showtime management and seat reservation functionalities. It allows users to rate and review movies, react to reviews, reserve seats for showtimes and manage their bookings. Admins can also manage movies and showtimes, promote users to higher roles and generate reports for showtimes.
 
 ## Features
 - **Authentication and authorization**
