@@ -10,8 +10,8 @@ A **Web API** built with **ASP.NET Core**. The system includes user authenticati
 
 - **Movie management**
   - Users:
-      - View all the reviews of a movie, sort and filters them by rating, reactions count or date 
-      - Get all the acors of a movie
+      - View all the reviews of a movie, sort and filter them by rating, reactions count or date 
+      - Get all the actors of a movie
   - Admins: Create, update and delete movies.
   
 - **Showtime management**
@@ -23,7 +23,7 @@ A **Web API** built with **ASP.NET Core**. The system includes user authenticati
 
 - **Actor management**
   - Users: Get all the movies the actor has starred in
-  - Admins: Create, update, delete and assing/remove actors to movies
+  - Admins: Create, update, delete and assign/remove actors to movies
  
 - **Seats reservation**
   - Users:
