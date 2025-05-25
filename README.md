@@ -40,7 +40,7 @@ A **Web API** built with **ASP.NET Core**. The system includes user authenticati
 - **Movie search**
   - **Levenshtein distance** based algorithm for best title matches
   - Search functionality with filtering and sorting options.
-    Users can search movies using one or multiple filters:
+    Users can search movies using one or multiple filters, including:
     - Title
     - Rating
     - Genres
