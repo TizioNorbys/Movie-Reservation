@@ -176,7 +176,7 @@ public class MovieSearchQuery
             string[] values = input.Split(',');
             double min = double.Parse(values[0], CultureInfo.InvariantCulture);
             double max = double.Parse(values[1], CultureInfo.InvariantCulture);
-            return new double[] { min, max };
+            return [min, max];
         }
 
         var ratingRange = GetRangeValues(Rating);

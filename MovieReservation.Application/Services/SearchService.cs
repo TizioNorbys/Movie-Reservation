@@ -28,7 +28,6 @@ public class SearchService : ISearchService
     {
         List<Expression<Func<Movie, bool>>> filterExpressions = new();
 
-
         if (filters.Title is not null)
             filterExpressions.Add(FilterBuilder<Movie>.BuildSingleFilterBy(m => m.Title, filters.Title));
 
