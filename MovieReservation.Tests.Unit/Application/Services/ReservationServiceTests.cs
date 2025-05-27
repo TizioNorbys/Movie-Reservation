@@ -26,7 +26,7 @@ public class ReservationServiceTests
 	private readonly ILogger<ReservationService> _loggerStub;
 
 	private static readonly Guid testId = Guid.NewGuid();
-	private static readonly CreateReservationDto testRequest = new(testId, new[] { testId });
+	private static readonly CreateReservationDto testRequest = new(testId, [testId]);
 
 	public ReservationServiceTests()
 	{

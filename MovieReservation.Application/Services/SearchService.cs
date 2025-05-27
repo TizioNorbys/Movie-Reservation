@@ -26,7 +26,7 @@ public class SearchService : ISearchService
 
     private static List<Expression<Func<Movie, bool>>> GetFilterExpressions(MovieSearchFiltersDto filters)
     {
-        List<Expression<Func<Movie, bool>>> filterExpressions = new();
+        List<Expression<Func<Movie, bool>>> filterExpressions = [];
 
         if (filters.Title is not null)
             filterExpressions.Add(FilterBuilder<Movie>.BuildSingleFilterBy(m => m.Title, filters.Title));

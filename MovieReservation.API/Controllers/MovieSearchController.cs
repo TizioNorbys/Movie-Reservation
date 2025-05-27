@@ -1,6 +1,4 @@
-﻿using System;
-using Microsoft.AspNetCore.Mvc;
-using MovieReservation.API.Extensions;
+﻿using Microsoft.AspNetCore.Mvc;
 using MovieReservation.API.Requests.QueryModels;
 using MovieReservation.Application.Interfaces.Services;
 
@@ -28,7 +26,7 @@ public class MovieSearchController : ControllerBase
 		var movies = await _movieService.GetBestMatchesByTitle(title, 6, token);
 		return movies.Any() ? Ok(movies) : NotFound(new { Message = $"No movies found for {title} title" });
 	}
-	
+
     [HttpGet]
 	public async Task<IActionResult> SearchBy([FromQuery] MovieSearchQuery searchFilters, CancellationToken token = default)
     {

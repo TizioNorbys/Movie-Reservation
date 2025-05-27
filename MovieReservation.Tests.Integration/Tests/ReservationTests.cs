@@ -34,7 +34,7 @@ public class ReservationTests : IntegrationTestsBase, IClassFixture<CustomWebApp
 		var testShowtime = context.Showtimes.AsNoTracking().First();
 		var testSeats = context.Seats.AsNoTracking().Where(s => s.HallId == testShowtime.HallId).Take(2).ToList();
 
-		CreateReservationRequest testRequest = new(testShowtime.Id, new[] { testSeats[0].Id, testSeats[1].Id });
+		CreateReservationRequest testRequest = new(testShowtime.Id, [testSeats[0].Id, testSeats[1].Id ]);
 
 		// Act
 		var response = await client.PostAsJsonAsync("api/reservation", testRequest);
