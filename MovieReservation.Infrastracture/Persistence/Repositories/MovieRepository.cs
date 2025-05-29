@@ -65,6 +65,7 @@ public class MovieRepository : RepositoryBase<Movie>, IMovieRepository
     public async Task<IEnumerable<Movie>> GetBestMatchesByTitleAsync(string title, int count, CancellationToken token = default)
     {
         return await _dbContext.Movies
+            .AsNoTracking()
             .Include(m => m.Genres)
             .Where(m => MovieDbContext.Levenshtein(m.Title, title) <= 4)    // get the titles with a levenstein distance <= 4 from "title"
             .Take(count).ToListAsync(token);                                // return the "count" best matches
@@ -76,11 +77,11 @@ public class MovieRepository : RepositoryBase<Movie>, IMovieRepository
         bool isDescending = sortOrder == SortingOrders.Desc;
 
         return rating is null ?
-                (isDescending ? await _dbContext.Movies.Where(m => m.Id == id).SelectMany(m => m.Reviews).Include(r => r.Reactions).OrderByDescending(keySelector).ToListAsync(token)
-                : await _dbContext.Movies.Where(m => m.Id == id).SelectMany(m => m.Reviews).Include(r => r.Reactions).OrderBy(keySelector).ToListAsync(token))
+                (isDescending ? await _dbContext.Movies.AsNoTracking().Where(m => m.Id == id).SelectMany(m => m.Reviews).Include(r => r.Reactions).OrderByDescending(keySelector).ToListAsync(token)
+                : await _dbContext.Movies.AsNoTracking().Where(m => m.Id == id).SelectMany(m => m.Reviews).Include(r => r.Reactions).OrderBy(keySelector).ToListAsync(token))
             :
-                (isDescending ? await _dbContext.Movies.Where(m => m.Id == id).SelectMany(m => m.Reviews).Include(r => r.Reactions).Where(r => r.Rating == rating).OrderByDescending(keySelector).ToListAsync(token)
-                : await _dbContext.Movies.Where(m => m.Id == id).SelectMany(m => m.Reviews).Include(r => r.Reactions).Where(r => r.Rating == rating).OrderBy(keySelector).ToListAsync(token));
+                (isDescending ? await _dbContext.Movies.AsNoTracking().Where(m => m.Id == id).SelectMany(m => m.Reviews).Include(r => r.Reactions).Where(r => r.Rating == rating).OrderByDescending(keySelector).ToListAsync(token)
+                : await _dbContext.Movies.AsNoTracking().Where(m => m.Id == id).SelectMany(m => m.Reviews).Include(r => r.Reactions).Where(r => r.Rating == rating).OrderBy(keySelector).ToListAsync(token));
 
     }
     
@@ -112,7 +113,7 @@ public class MovieRepository : RepositoryBase<Movie>, IMovieRepository
 
     public async Task<IEnumerable<Movie>> SearchByAsync(List<Expression<Func<Movie, bool>>> filters, CancellationToken token = default)
     {
-        var query = _dbContext.Movies.Include(m => m.Genres).AsQueryable();
+        var query = _dbContext.Movies.AsNoTracking().Include(m => m.Genres).AsQueryable();
         foreach (var filter in filters)
         {
             query = query.Where(filter);

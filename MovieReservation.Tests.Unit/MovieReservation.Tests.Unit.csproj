@@ -38,10 +38,14 @@
     <None Remove="Application\" />
     <None Remove="Application\Utility\" />
     <None Remove="Application\Services\" />
+    <None Remove="API\" />
+    <None Remove="API\Requests\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Application\" />
     <Folder Include="Application\Utility\" />
     <Folder Include="Application\Services\" />
+    <Folder Include="API\" />
+    <Folder Include="API\Requests\" />
   </ItemGroup>
 </Project>

@@ -32,7 +32,7 @@ public class MovieServiceTests
     }
 
     [Fact]
-    public async Task Create_ReturnsValidationError_WhenModelValidationFails()
+    public async Task Create_ReturnsValidationError_When_ModelValidationFails()
     {
         // Arrange
         var testRequest = new CreateUpdateMovieDto(string.Empty, string.Empty, string.Empty, default, string.Empty, string.Empty, default, default, new List<string>());

@@ -10,13 +10,13 @@ namespace MovieReservation.API.Requests.QueryModels;
 
 public static class QueryValidator
 {
+    private static readonly CultureInfo invariantCulture = CultureInfo.InvariantCulture;
+
     public static string ValidateMovieRating(string rating)
     {
-        CultureInfo invariantCulture = CultureInfo.InvariantCulture;
-
         var match = Regex.Match(rating, Regexes.MovieRating);
         if (!match.Success)
-            return "&rating=1.0,10.0";
+            return "&rating=1,10";
 
         var values = match.Value.Split(',');
         string left = values[0];
@@ -30,7 +30,7 @@ public static class QueryValidator
                 if (from < 1 || from > 10)
                     from = 1.0;
                 else
-                    from = Convert.ToDouble(from.ToString("N1"));
+                    from = double.Truncate(from * 10) / 10;
             }
         }
         else from = 1.0;
@@ -102,7 +102,7 @@ public static class QueryValidator
 
         var match = Regex.Match(input, Regexes.Range);
         if (!match.Success)
-            return $"&{propertyName}={min},{max}";
+            return string.Empty;
 
         var values = match.Value.Split(',');
         string left = values[0];

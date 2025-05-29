@@ -44,7 +44,7 @@ public class ReservationTests : IntegrationTestsBase, IClassFixture<CustomWebApp
 	}
 
     [Fact]
-	public async Task Delete_Should_ReturnsSuccesss()
+	public async Task Delete_Should_ReturnSuccess()
 	{
 		// Arrange
 		using var context = _dbFixture.Context;
