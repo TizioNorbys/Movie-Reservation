@@ -2,8 +2,8 @@
 
 public class SeedingException : Exception
 { 
-	public SeedingException()
-		: base("Fail to seed admin user")
+	public SeedingException(string message = "Seeding failed")
+		: base()
 	{
 	}
 }

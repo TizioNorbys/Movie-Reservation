@@ -45,12 +45,12 @@ public static class DbInitializer
         logger.LogInformation("Adding admin user to the database");
         var createResult = await userManager.CreateAsync(adminUser, admin.Password);
         if (!createResult.Succeeded)
-            throw new SeedingException();
+            throw new SeedingException("Fail to seed admin user");
 
         string[] roles = { RoleNames.User, RoleNames.Admin };
         var addRoleResult = await userManager.AddToRolesAsync(adminUser, roles);
         if (!addRoleResult.Succeeded)
-            throw new SeedingException();
+            throw new SeedingException("Fail to seed admin user");
 
         logger.LogInformation("Adding genres to the database");
         foreach (var genreName in Constant<MovieGenres>.GetValues())    // Genres

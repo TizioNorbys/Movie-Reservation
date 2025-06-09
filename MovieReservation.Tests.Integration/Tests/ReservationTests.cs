@@ -20,13 +20,15 @@ public class ReservationTests : IntegrationTestsBase, IClassFixture<CustomWebApp
 
 		var movies = JsonReader.ReadAndDeserialize<Movie>(PathHelper.GetAbsolutePath("Tests/TestData/Movies.json"));
 		var showtimes = JsonReader.ReadAndDeserialize<Showtime>(PathHelper.GetAbsolutePath("Tests/TestData/Showtimes.json"));
+		if (movies is { Count: 0 } || showtimes is { Count: 0 })
+			throw new Exception("Fail to get test data");
 
 		context.AddRange(movies);
 		context.AddRange(showtimes);
 		context.SaveChanges();
 	}
 
-	[Fact]
+    [Fact]
 	public async Task Create_Should_ReturnSuccess()
 	{
 		// Arrange

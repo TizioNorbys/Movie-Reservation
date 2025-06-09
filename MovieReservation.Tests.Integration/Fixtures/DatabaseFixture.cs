@@ -4,6 +4,7 @@ using MovieReservation.Application.Constants;
 using MovieReservation.Application.Utility;
 using MovieReservation.Domain.Constants;
 using MovieReservation.Domain.Entities;
+using MovieReservation.Domain.Exceptions;
 using MovieReservation.Infrastracture.Persistence;
 using MovieReservation.Infrastracture.Serialization;
 
@@ -83,6 +84,9 @@ public class DatabaseFixture
         }
 
         var halls = JsonReader.ReadAndDeserialize<Hall>(PathHelper.GetAbsolutePath("Tests/TestData/Halls.json"));   // Halls and seats
+        if (halls.Count == 0)
+            throw new SeedingException();
+
         foreach (var hall in halls)
         {
             hall.Seats = GetSeats(hall.SeatCount).ToList();

@@ -15,6 +15,6 @@ public static class JsonReader
     public static List<T> ReadAndDeserialize<T>(string filePath)
     {
         string json = File.ReadAllText(filePath);
-        return JsonSerializer.Deserialize<List<T>>(json, options)!;
+        return JsonSerializer.Deserialize<List<T>>(json, options) ?? new List<T>();
     }
 }
