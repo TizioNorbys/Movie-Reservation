@@ -49,14 +49,4 @@ public static class DomainObjectsMappingExtensions
     {
         return showtimes.Select(s => new ShowtimeInfoDto { Timestamp = s.Timestamp });
     }
-
-    public static IEnumerable<ShowtimeReservationDto> ToDtos(this IEnumerable<Reservation> reservations)
-    {
-        return reservations.Select(r => new ShowtimeReservationDto
-        {
-            Code = r.Code,
-            UserName = r.User.UserName!,
-            SeatsReserved = r.Seats.Select(s => s.Number)
-        });
-    }
 }

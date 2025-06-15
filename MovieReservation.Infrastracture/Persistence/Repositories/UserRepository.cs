@@ -1,8 +1,6 @@
-﻿using System.Linq.Expressions;
-using Microsoft.AspNetCore.Identity;
+﻿using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using MovieReservation.Application.DTOs.Reservation;
-using MovieReservation.Application.Extensions;
 using MovieReservation.Domain.Abstractions.QueryResults;
 using MovieReservation.Domain.Entities;
 using MovieReservation.Domain.Repository;

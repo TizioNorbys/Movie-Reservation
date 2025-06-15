@@ -2,7 +2,7 @@
 
 namespace MovieReservation.Application.DTOs.Showtime;
 
-public record ShowtimeReservationDto
+public record ShowtimeReservationDto : IShowtimeReservationQueryResult
 {
     public required string Code { get; init; }
 

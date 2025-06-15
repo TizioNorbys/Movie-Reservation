@@ -176,6 +176,7 @@ public class MovieService : ServiceBase<Movie>, IMovieService
 			_logger.LogInformation("Fetching showtimes of movie with {Id} id", id);
 			var showtimes = await _movieRepository.GetRelatedAsync(id, m => m.Showtimes, s => s.Timestamp, token);
 			showtimes = showtimes.Where(s => s.Timestamp >= DateTime.UtcNow);
+
 			return Result.Ok(showtimes.ToDtos() as IEnumerable<IShowtimeInfoQueryResult>);
 		}
 

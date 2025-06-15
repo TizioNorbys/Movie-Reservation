@@ -4,6 +4,6 @@ public record ReviewDetailsDto(
     int Rating,
     string Title,
     string Content,
-    DateTime TimeStamp,
+    DateTime Timestamp,
     int Likes,
     int Dislikes);

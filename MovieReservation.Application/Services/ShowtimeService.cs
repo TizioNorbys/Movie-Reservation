@@ -7,6 +7,7 @@ using MovieReservation.Application.Extensions;
 using MovieReservation.Application.Interfaces.Data;
 using MovieReservation.Application.Interfaces.Services;
 using MovieReservation.Application.Services.Base;
+using MovieReservation.Domain.Abstractions.QueryResults;
 using MovieReservation.Domain.Entities;
 using MovieReservation.Domain.Repository;
 using MovieReservation.Domain.Repository.Base;
@@ -108,7 +109,7 @@ public class ShowtimeService : ServiceBase<Showtime>, IShowtimeService
 		return Result.Ok();
     }
 
-    public async Task<Result<IEnumerable<ShowtimeReservationDto>>> GetReservations(Guid id, CancellationToken token = default)
+    public async Task<Result<IEnumerable<IShowtimeReservationQueryResult>>> GetReservations(Guid id, CancellationToken token = default)
     {
 		if (!await _showtimeRepository.ExistByAsync(s => s.Id, id, token))
 		{
@@ -117,7 +118,7 @@ public class ShowtimeService : ServiceBase<Showtime>, IShowtimeService
 		}
 
 		_logger.LogInformation("Fetching reservations of showtime with {Id} id", id);
-		var showtimeReservations = await _reservationRepository.GetByAsync(r => r.ShowtimeId, id, token, r => r.User, r => r.Seats);
-		return Result.Ok(showtimeReservations.ToDtos());
+		var showtimeReservations = await _showtimeRepository.GetShowtimeReservations(id, token);
+		return Result.Ok(showtimeReservations);
     }
 }

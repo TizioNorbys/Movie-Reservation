@@ -15,6 +15,19 @@ public class ShowtimeRepository : RepositoryBase<Showtime>, IShowtimeRepository
 	{
 	}
 
+    public async Task<IEnumerable<IShowtimeReservationQueryResult>> GetShowtimeReservations(Guid id, CancellationToken token)
+    {
+        return await _dbContext.Showtimes
+            .Where(s => s.Id == id)
+            .SelectMany(s => s.Reservations.Select(r => new ShowtimeReservationDto
+            {
+                Code = r.Code,
+                UserName = r.User.UserName!,
+                SeatsReserved = r.Seats.Select(s => s.Number)
+            }))
+            .ToListAsync(token);
+    }
+
     public async Task<IShowtimeSeatsQueryResult?> GetShowtimeSeatsStatusAsync(Guid id, CancellationToken token = default)
 	{
         return await _dbContext.Showtimes
